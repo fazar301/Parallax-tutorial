@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <a href="#" class="logo">Jungle</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Destination</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <h2 id="text"><span>It's time for a new</span><br>Adventure</h2>
+        <img src="images/bird1.png" id="bird1">
+        <img src="images/bird2.png" id="bird2">
+        <img src="images/forest.png" id="forest">
+        <a href="#" id="btn">Explore</a>
+        <img src="images/rocks.png" id="rocks">
+        <img src="images/water.png" id="water">
+    </section>
+    <div class="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae aperiam voluptates dolorum, magni corrupti accusamus sapiente reiciendis deserunt earum repellat fugiat ab sint doloribus rerum illo sunt laboriosam nulla consequatur? Quam aliquid dicta necessitatibus quaerat sint perferendis alias facilis aut quas neque perspiciatis quisquam aspernatur qui possimus, similique maiores commodi? Eligendi ea iusto, dolorum<br> <br>officia quaerat soluta quisquam, aliquam iste, sunt tempore voluptate excepturi hic in! Consequatur eos atque exercitationem mollitia quos aut nihil assumenda quae officiis velit. Quasi perspiciatis facere sit corporis dolorem at commodi! Molestias numquam saepe, dicta ex suscipit eos quidem earum pariatur voluptates animi laborum tempora voluptatibus nobis aperiam maxime, quos deleniti? Aperiam dicta quis consequuntur veniam nisi eos, quae ducimus recusandae blanditiis accusamus!<br> <br>Quasi amet molestiae laboriosam maxime recusandae explicabo veniam, hic deleniti qui odit voluptatum quod officiis quam, iure quisquam aliquid officia ab debitis totam optio, iusto itaque! Soluta cumque aliquid minus enim alias. Dignissimos eius molestias neque eum accusamus rerum eos, <br><br>ipsum voluptatem enim repellat natus adipisci minima ea quam est quia! Culpa qui incidunt illo maiores aperiam consectetur ab quae excepturi eveniet fuga hic, quaerat quos at soluta? Officia repudiandae consequatur iste maiores dolorem ullam, quidem tempore vel odio itaque facere mollitia!</p>
+    </div>
+    
+    <script>
+        const text = document.getElementById('text')
+        const bird1 = document.getElementById('bird1')
+        const bird2 = document.getElementById('bird2')
+        const btn = document.getElementById('btn')
+        const rocks = document.getElementById('rocks')
+        const forest = document.getElementById('forest')
+        const water = document.getElementById('water')
+        const header = document.getElementById('header')
+
+        window.addEventListener('scroll', function(){
+            const value = window.scrollY
+
+            text.style.top = `${50 + value * -0.5}%`
+            bird1.style.top = `${value * -1.5}px`                               
+            bird1.style.left = `${value * 2}px`
+            bird2.style.top = `${value * -1.5}px`                               
+            bird2.style.left = `${value * -5}px`
+            btn.style.marginTop = `${value * 1.5}px`
+            rocks.style.top = `${value * -0.12}px` 
+            forest.style.top = `${value * 0.25}px`
+            header.style.top = `${value * 0.5}px`
+        })
+    </script>
+</body>
+</html>
